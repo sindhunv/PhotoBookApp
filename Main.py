@@ -21,7 +21,7 @@ def main():
     two_portrait_photos.pack(expand=True, side=LEFT)
     landscape_text.pack(expand=True, side=LEFT)
 
-    option2_selected()
+    option1_selected()
     page_type.set(option_selected.get())
     
     top.pack(expand=True, fill=BOTH)
