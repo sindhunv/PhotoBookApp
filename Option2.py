@@ -1,6 +1,6 @@
 from AppElements import *
 
-
+# Two portrait photos on one page
 def option2_selected():
     print("option2_selected")
     reset_all()
@@ -16,7 +16,7 @@ def option2_selected():
 
 def add_button1_clicked():
     print("Add button 1 clicked")
-    file = filedialog.askopenfile(parent=photo, title='Choose source folder')
+    file = filedialog.askopenfile(parent=photo1, title='Choose source folder')
     if file is None:
         image_path.set(None)
     else:
@@ -27,7 +27,7 @@ def add_button1_clicked():
 
 def add_button2_clicked():
     print("Add button 2 clicked")
-    file = filedialog.askopenfile(parent=photo, title='Choose source folder')
+    file = filedialog.askopenfile(parent=photo2, title='Choose source folder')
     if file is None:
         image_path.set(None)
     else:
@@ -54,5 +54,8 @@ def display_portrait(frame, c):
     im.thumbnail(size)    
     c.configure(width=size[0], height=size[1])
     c.image = ImageTk.PhotoImage(im)
-    c.create_image(0, 0, image=canvas.image, anchor=NW)  
+    c.create_image(0, 0, image=c.image, anchor=NW)  
     c.pack()
+
+def save_portrait():
+    print("save landscape")

@@ -1,6 +1,6 @@
 from AppElements import *
 
-
+# One landscape photo
 def option1_selected():
     print("option1_selected")
     reset_all()
@@ -26,9 +26,14 @@ def display_landscape():
     print("display landscape")
     im = Image.open(image_path.get())
     photo_aspect_ratio = im.size[0] / im.size[1]
-    size = photo_display_width, photo_display_height/photo_aspect_ratio
+    size = photo_display_width, photo_display_width/photo_aspect_ratio
+    if im.size[0] < im.size[1]:
+        im = im.transpose(Image.ROTATE_270)
     im.thumbnail(size)
     canvas.configure(width=size[0], height=size[1])
     canvas.image = ImageTk.PhotoImage(im)
     canvas.create_image(0, 0, image=canvas.image, anchor=NW)  
     canvas.pack()
+
+def save_landscape():
+    print("save landscape")
