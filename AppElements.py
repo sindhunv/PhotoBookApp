@@ -82,11 +82,30 @@ canvas2 = Canvas(photo2, bg='black', highlightthickness=0)
 page_type = IntVar()
 option_selected = IntVar()
 image_path = StringVar()
+image_path1 = StringVar()
+image_path2 = StringVar()
+text = StringVar()
+is_save = StringVar()
+is_save.set("False")
+destination_folder_name = StringVar()
+destination_folder_name.set("D:/HobbyProjects/Photos/Output")
+black = (0, 0, 0)
+white = (255, 255, 255, 100)
+arial = "arial.ttf"
+
+# Label
+font_size = 15
+text_font = "arial " + font_size.__str__()
+text.set("Enter photo caption")
+caption_label = Entry(photo_frame_display, font=text_font, textvariable=text, foreground="white smoke", bg="black", justify=CENTER, width=int(photo_frame_display_width))
 
 # Radio button options
 landscape_photo = Radiobutton(bottom, bg="orange", text="Option1", value=1, variable=page_type)
 two_portrait_photos = Radiobutton(bottom, bg="orange", text="Option2", value=2, variable=page_type)
 landscape_text = Radiobutton(bottom, bg="orange", text="Option3", value=3, variable=page_type)
+reset = Button(bottom, bg="light blue", text="Reset")
+save = Button(bottom, bg="light blue", text="Save")
+show = Button(bottom, bg="light blue", text="Show")
 
 
 def reset_all():
@@ -100,4 +119,5 @@ def reset_all():
     canvas.pack_forget()
     canvas1.pack_forget()
     canvas2.pack_forget()
+    caption_label.place_forget()
     photo_frame_display.pack_forget()

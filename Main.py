@@ -17,9 +17,13 @@ def main():
     two_portrait_photos.configure(command=option2_selected)
     landscape_text.configure(command=option3_selected)
 
-    landscape_photo.pack(expand=True, side=LEFT)
-    two_portrait_photos.pack(expand=True, side=LEFT)
-    landscape_text.pack(expand=True, side=LEFT)
+    landscape_photo.pack(expand=True, side=TOP)
+    reset.pack(expand=True, side=LEFT)
+    save.pack(expand=True, side=RIGHT)
+    #landscape_text.pack(expand=True, side=BOTTOM)
+    show.pack(expand=True, side=BOTTOM)
+    two_portrait_photos.pack(expand=True, side=BOTTOM)
+
 
     option1_selected()
     page_type.set(option_selected.get())
